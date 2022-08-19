@@ -11,8 +11,8 @@ export const Router = () => {
 	return (
 		<BrowserRouter>
 			<Routes>
-				<Route path="movies/:id" element={<Detail/>} />
-				<Route path="movies" element={<Home />} />
+				<Route path="films/:id" element={<Detail/>} />
+				<Route path="films" element={<Home />} />
 				<Route path="/" element={<Home/>} />
 			</Routes>
 		</BrowserRouter>
