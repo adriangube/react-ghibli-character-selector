@@ -32,8 +32,7 @@
     "test:watch": "react-scripts test",
     "eject": "react-scripts eject",
     "lint": "eslint --fix",
-    "husky-install": "husky install",
-    "prepare": "husky install"
+    "husky-install": "husky install"
   },
   "eslintConfig": {
     "extends": [
