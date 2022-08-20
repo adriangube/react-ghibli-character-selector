@@ -1,0 +1,9 @@
+.EntityList {
+    margin-bottom: 32px;
+}
+
+.EntityList .EntityList__category{
+    text-transform: capitalize;
+    border-left: 4px solid var(--title-background-color-light);
+    padding-left: 4px;
+}

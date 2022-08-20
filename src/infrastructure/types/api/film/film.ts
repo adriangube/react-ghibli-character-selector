@@ -14,7 +14,7 @@ export interface FilmApi {
     running_time: string;
     rt_score: string;
     people?: string[] | EntityApi[];
-    species?: string[] | string[];
+    species?: string[] | EntityApi[];
     locations?: string[] | EntityApi[];
     vehicles?: string[] | EntityApi[];
     url: string;

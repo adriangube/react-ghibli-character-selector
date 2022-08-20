@@ -1,15 +1,13 @@
 @import '../../theme/theme.css';
 
-.FilmDetailGeneralInfo .FilmDetailGeneralInfo__content {
-    display: grid;
-    grid-template-columns: 4fr 1fr;
-    column-gap: 64px;
+.FilmDetailGeneralInfo .FilmDetailGeneralInfo__content section {
+    padding-bottom: 24px;
 }
 
 .FilmDetailGeneralInfo .FilmDetailGeneralInfo__general-info p{
     margin: 0px;
     line-height: 24px;
-    font-size: var(--small-font-size);
+    padding-left: 24px;
 }
 
 .FilmDetailGeneralInfo .FilmDetailGeneralInfo__general-info .label {
@@ -18,6 +16,7 @@
 
 .FilmDetailGeneralInfo .FilmDetailGeneralInfo__sinopsis p{
     font-size: 18px;
+    padding-left: 24px;
 }
 
 .FilmDetailGeneralInfo h2 {

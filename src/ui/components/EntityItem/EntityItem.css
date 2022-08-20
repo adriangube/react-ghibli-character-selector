@@ -1,0 +1,9 @@
+.Entity {
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+.Entity:hover {
+    text-decoration: underline;
+    opacity: 1;
+}

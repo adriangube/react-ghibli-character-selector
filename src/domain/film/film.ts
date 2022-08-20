@@ -13,7 +13,8 @@ export interface Film {
     releaseDate: string;
     runningTime: string;
     score: string;
-    people?: any[];
-    locations?: any[];
-    vehicles?: any[];
+    people?: Entity[];
+    locations?: Entity[];
+    species?: Entity[];
+    vehicles?: Entity[];
 }

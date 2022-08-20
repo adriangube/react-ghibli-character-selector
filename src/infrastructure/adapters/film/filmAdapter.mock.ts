@@ -45,7 +45,10 @@ export const FILM_API: FilmApi = {
 		}
 	],
 	'species': [
-		'https://ghibliapi.herokuapp.com/species/af3910a6-429f-4c74-9ad5-dfe1c4aa04f2'
+		{
+			'id': 'af3910a6-429f-4c74-9ad5-dfe1c4aa04f2',
+			'name': 'Human'
+		}
 	],
 	'locations': [],
 	'vehicles': [
@@ -92,6 +95,12 @@ export const EXPECTED_FILM: Film = {
 		{
 			id: '2a1dad70-802a-459d-8cc2-4ebd8821248b',
 			name: 'Laputian Robot'
+		}
+	],
+	species: [
+		{
+			id: 'af3910a6-429f-4c74-9ad5-dfe1c4aa04f2',
+			name: 'Human'
 		}
 	],
 	locations: [],

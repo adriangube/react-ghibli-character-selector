@@ -1,5 +1,6 @@
 import {Film} from '../../../domain/film/film';
 import {FilmApi} from '../../types';
+import {EntityApi} from '../../types/api/entityApi';
 
 
 export const filmAdapter = (filmApi: FilmApi): Film => {
@@ -16,9 +17,10 @@ export const filmAdapter = (filmApi: FilmApi): Film => {
 		releaseDate: filmApi.release_date,
 		runningTime: filmApi.running_time,
 		score: filmApi.rt_score,
-		people: filmApi.people,
-		locations: filmApi.locations,
-		vehicles: filmApi.vehicles
+		people: filmApi.people as EntityApi[],
+		species: filmApi.species as EntityApi[],
+		locations: filmApi.locations as EntityApi[],
+		vehicles: filmApi.vehicles as EntityApi[]
 	};
 };
 

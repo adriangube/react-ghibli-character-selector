@@ -7,6 +7,7 @@ import {FilmRepository} from './types';
 
 
 const PEOPLE_BASE_URL = 'https://ghibliapi.herokuapp.com/people/';
+const SPECIES_BASE_URL = 'https://ghibliapi.herokuapp.com/species/';
 const LOCATIONS_BASE_URL = 'https://ghibliapi.herokuapp.com/locations/';
 const VEHICLES_BASE_URL = 'https://ghibliapi.herokuapp.com/vehicles/';
 
@@ -22,11 +23,12 @@ export const filmRepository: FilmRepository = async (id, adapter: FilmAdapter, h
 	const apiData = await httpClient.get({url});
 
 	const people = categoryUrlsWithoutDefault(apiData?.data?.people, PEOPLE_BASE_URL);
+	const species = categoryUrlsWithoutDefault(apiData?.data?.species, SPECIES_BASE_URL);
 	const locations = categoryUrlsWithoutDefault(apiData?.data?.locations, LOCATIONS_BASE_URL);
 	const vehicles = categoryUrlsWithoutDefault(apiData?.data?.vehicles, VEHICLES_BASE_URL);
 
 
-	const categories = [people, locations, vehicles];
+	const categories = [people,species, locations, vehicles];
 
 
 	const result: Promise<Array<ApiResponse<EntityApi[]>[]>>[] = [];
@@ -44,10 +46,13 @@ export const filmRepository: FilmRepository = async (id, adapter: FilmAdapter, h
 	apiData.data.people = resolvedCategories[0]?.map((data: ApiResponse<EntityApi[]>) => {
 		return {...data?.data};
 	});
-	apiData.data.locations = resolvedCategories[1]?.map((data: ApiResponse<EntityApi[]>) => {
+	apiData.data.species = resolvedCategories[1]?.map((data: ApiResponse<EntityApi[]>) => {
 		return {...data?.data};
 	});
-	apiData.data.vehicles = resolvedCategories[2]?.map((data: ApiResponse<EntityApi[]>) => {
+	apiData.data.locations = resolvedCategories[2]?.map((data: ApiResponse<EntityApi[]>) => {
+		return {...data?.data};
+	});
+	apiData.data.vehicles = resolvedCategories[3]?.map((data: ApiResponse<EntityApi[]>) => {
 		return {...data?.data};
 	});
 	return adapter(apiData?.data);
