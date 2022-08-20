@@ -4,16 +4,16 @@ import {
 	Routes,
 	Route,
 } from 'react-router-dom';
-import {Detail} from './Detail/Detail';
-import {Home} from './Home/Home';
+import {FilmDetail} from './FilmDetail/FilmDetail';
+import {Films} from './Films/Films';
 
 export const Router = () => {
 	return (
 		<BrowserRouter>
 			<Routes>
-				<Route path="films/:id" element={<Detail/>} />
-				<Route path="films" element={<Home />} />
-				<Route path="/" element={<Home/>} />
+				<Route path="films/:id" element={<FilmDetail/>} />
+				<Route path="films" element={<Films />} />
+				<Route path="/" element={<Films/>} />
 			</Routes>
 		</BrowserRouter>
 	);

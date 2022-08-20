@@ -1,0 +1,28 @@
+.FilmItem {
+    cursor: pointer;
+    position: relative;
+    opacity: 0.9;
+}
+
+.FilmItem:hover {
+    opacity: 1;
+}
+
+.FilmItem .FilmItem__image {
+    width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.FilmItem .FilmItem__title {
+    position: absolute;
+    bottom: 4px;
+    padding: 4px 8px;
+    text-align: center;
+    width: 100%;
+    background-color: black;
+    color: white;
+    box-sizing: border-box;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
