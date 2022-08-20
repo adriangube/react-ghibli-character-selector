@@ -21,6 +21,7 @@ export const Banner = ({ imageUrl }:BannerProps ): JSX.Element => {
 					className='Banner__image'
 					loading='lazy'
 					alt="banner"
+					data-testid="banner"
 				/>
 			)}
 			{!imageUrl && (
@@ -31,6 +32,7 @@ export const Banner = ({ imageUrl }:BannerProps ): JSX.Element => {
 					height="200px"
 					className='Banner__fallback'
 					loading='lazy'
+					data-testid="fallback-banner"
 				/>
 			)}
 		</div>
