@@ -3,6 +3,7 @@ import {useParams} from 'react-router-dom';
 import {getFilmUseCase} from '../../../application/film/getFilmUseCase';
 import {Film} from '../../../domain/film/film';
 import {Banner} from '../../components/Banner/Banner';
+import {FilmDetailGeneralInfo} from '../../components/FilmDetailGeneralInfo/FilmDetailGeneralInfo';
 import {Title} from '../../components/Title/Title';
 import './FilmDetail.css';
 
@@ -38,7 +39,7 @@ export const FilmDetail = (): JSX.Element => {
 						<Title title={film.title} />
 					</div>
 					<div className="FilmDetail__film__content">
-						
+						<FilmDetailGeneralInfo film={film}/>
 					</div>
 				</div>
 			)}

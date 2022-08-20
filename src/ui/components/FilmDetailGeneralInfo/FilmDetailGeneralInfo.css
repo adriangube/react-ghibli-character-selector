@@ -1,0 +1,34 @@
+@import '../../theme/theme.css';
+
+.FilmDetailGeneralInfo .FilmDetailGeneralInfo__content {
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+    column-gap: 64px;
+}
+
+.FilmDetailGeneralInfo .FilmDetailGeneralInfo__general-info p{
+    margin: 0px;
+    line-height: 24px;
+    font-size: var(--small-font-size);
+}
+
+.FilmDetailGeneralInfo .FilmDetailGeneralInfo__general-info .label {
+    font-weight: 600;
+}
+
+.FilmDetailGeneralInfo .FilmDetailGeneralInfo__sinopsis p{
+    font-size: 18px;
+}
+
+.FilmDetailGeneralInfo h2 {
+    border-left: 4px solid var(--title-background-color-light);
+    padding-left: 4px;
+    line-height: 25px;
+}
+
+
+@media only screen and (max-width: 768px) {
+    .FilmDetailGeneralInfo .FilmDetailGeneralInfo__content {
+        grid-template-columns: 1fr;
+    }
+}
