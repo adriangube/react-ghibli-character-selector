@@ -18,6 +18,7 @@ export const Banner = ({ imageUrl }:BannerProps ): JSX.Element => {
 					}} 
 					width="100%"
 					className='Banner__image'
+					loading='lazy'
 				/>
 			)}
 			{!imageUrl && (
@@ -26,6 +27,7 @@ export const Banner = ({ imageUrl }:BannerProps ): JSX.Element => {
 					alt="fallback"
 					width="100%"
 					className='Banner__fallback'
+					loading='lazy'
 				/>
 			)}
 		</div>

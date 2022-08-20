@@ -1,11 +1,20 @@
 .Films {
-    padding: 32px 64px;
+    padding: 64px;
     background-color: var(--primary-color);
+    min-height: calc(100vh - 56px);
+    
+     display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.Films .Films__content {
+    max-width: 1024px;
 }
 
 .Films .Films__films {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     column-gap: 32px;
     row-gap: 32px;
     justify-content: center;

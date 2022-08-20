@@ -1,4 +1,12 @@
 .FilmDetail {
     background-color: var(--background-color);
-    height: calc(100vh - 65px);
+    min-height: calc(100vh - 56px);
+}
+
+.FilmDetail .FilmDetail__film__header{
+    width: 100%;
+}
+
+.FilmDetail__film__content {
+    width: 100;
 }

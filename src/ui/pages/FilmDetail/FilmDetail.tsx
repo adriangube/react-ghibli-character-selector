@@ -37,6 +37,9 @@ export const FilmDetail = (): JSX.Element => {
 						<Banner imageUrl={film.movieBanner} />
 						<Title title={film.title} />
 					</div>
+					<div className="FilmDetail__film__content">
+						
+					</div>
 				</div>
 			)}
 			{!isFetching && !film && (

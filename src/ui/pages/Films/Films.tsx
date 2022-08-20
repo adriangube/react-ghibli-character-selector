@@ -26,19 +26,21 @@ export const Films = (): JSX.Element => {
 
 	return (
 		<div className='Films'>
-			{!isFetching && hasFilms && (
-				<div className='Films__films'>
-					{films.map((film) => (
-						<FilmItem key={film.id} film={film} />
-					))}
-				</div>
-			)}
-			{!isFetching && !hasFilms && (
-				<div className='Films__no-data'>No data</div>
-			)}
-			{isFetching && (
-				<div className='Film__is-fetching'>Fetching</div>
-			)}
+			<div className="Films__content">
+				{!isFetching && hasFilms && (
+					<div className='Films__films'>
+						{films.map((film) => (
+							<FilmItem key={film.id} film={film} />
+						))}
+					</div>
+				)}
+				{!isFetching && !hasFilms && (
+					<div className='Films__no-data'>No data</div>
+				)}
+				{isFetching && (
+					<div className='Film__is-fetching'>Fetching</div>
+				)}
+			</div>
 		</div>
 	);
 };

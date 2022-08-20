@@ -18,7 +18,7 @@
 
 .FilmItem .FilmItem__title {
     position: absolute;
-    bottom: 0px;
+    bottom: 4px;
     padding: 4px 8px;
     text-align: center;
     width: 100%;

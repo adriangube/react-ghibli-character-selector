@@ -3,8 +3,8 @@ import './Header.css';
 
 export const Header = (): JSX.Element => {
 	return (
-		<div className="Header">
+		<nav className="Header">
           
-		</div>
+		</nav>
 	);
 };

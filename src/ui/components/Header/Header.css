@@ -1,7 +1,7 @@
 @import '../../theme/theme.css';
 
 .Header {
-    height: 65px;
+    height: 56px;
     background-color: var(--background-color);
     box-shadow: 0 -6px 10px 5px rgba(0,0,0,0.5);
     position: sticky;
