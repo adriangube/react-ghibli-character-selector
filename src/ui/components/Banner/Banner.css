@@ -1,0 +1,14 @@
+.Banner .Banner__image, .Banner .Banner__fallback {
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+    object-position: 100% 10%;
+}
+
+.Banner .Banner__fallback {
+    object-position: initial;
+}
+
+.Banner .Banner__image.Banner__image--error {
+    object-position: initial;
+}
