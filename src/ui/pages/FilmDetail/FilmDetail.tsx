@@ -4,6 +4,7 @@ import {getFilmUseCase} from '../../../application/film/getFilmUseCase';
 import {Film} from '../../../domain/film/film';
 import {Banner} from '../../components/Banner/Banner';
 import {Title} from '../../components/Title/Title';
+import './FilmDetail.css';
 
 export const FilmDetail = (): JSX.Element => {
 	const [isFetching, setIsFetching] = useState(true);

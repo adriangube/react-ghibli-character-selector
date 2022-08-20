@@ -1,7 +1,7 @@
 .Title {
     position: relative;
     bottom: 5px;
-    background-color: black;
-    color: white;
+    background-color: var(--title-background-color-light);
+    color: var(--text-color);
     font-size: 24px;
 }

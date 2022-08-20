@@ -1,4 +1,10 @@
+@import '../../theme/theme.css';
+
 .Header {
     height: 65px;
-    background-color: #bbb;
+    background-color: var(--background-color);
+    box-shadow: 0 -6px 10px 5px rgba(0,0,0,0.5);
+    position: sticky;
+    top: 0;
+    z-index: 2;
 }
