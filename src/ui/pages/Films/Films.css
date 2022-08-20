@@ -2,20 +2,19 @@
     padding: 64px;
     background-color: var(--primary-color);
     min-height: calc(100vh - 56px);
-    
-     display: flex;
-  align-items: center;
-  flex-direction: column;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
 
 .Films .Films__content {
-    max-width: 1024px;
+    max-width: 1200px;
 }
 
 .Films .Films__films {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    column-gap: 32px;
+    column-gap: 64px;
     row-gap: 32px;
     justify-content: center;
 }
@@ -23,6 +22,7 @@
 @media only screen and (max-width: 1200px){
     .Films .Films__films {
         grid-template-columns: repeat(3, 1fr);
+        column-gap: 32px;
     }
 }
 
