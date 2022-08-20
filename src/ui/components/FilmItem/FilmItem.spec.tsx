@@ -30,8 +30,21 @@ describe('FilmItem', () => {
 		expect(title).toBeInTheDocument();
 		expect(image.src).toStrictEqual(FILM_MOCK.movieBanner);
 		expect(image.alt).toStrictEqual(`${FILM_MOCK.title} banner`);
+	});
+	it('should navigate to the film detail when user fires a click event', async () => {
+		render((
+			<MemoryRouter initialEntries={['/films']}>
+				<FilmItem film={FILM_MOCK} />
+			</MemoryRouter>
+		));
+
+		const filmItem = screen.getByTestId(FILM_ITEM_TEST_ID);
+		expect(filmItem).toBeInTheDocument();
+
 		expect(mockedUsedNavigate).toHaveBeenCalledTimes(0);
+
 		fireEvent.click(filmItem);
+
 		await waitFor(() => {
 			expect(mockedUsedNavigate).toHaveBeenCalledTimes(1);
 			expect(mockedUsedNavigate).toHaveBeenCalledWith(`/films/${FILM_MOCK.id}`);
