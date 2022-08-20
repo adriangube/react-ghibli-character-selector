@@ -1,3 +1,5 @@
+import {Entity} from '../entity/entityType';
+
 export interface Film {
     id: string;
     title: string;
@@ -11,8 +13,7 @@ export interface Film {
     releaseDate: string;
     runningTime: string;
     score: string;
-    people?: string[];
-    species?: string[];
-    locations?: string[];
-    vehicles?: string[];
+    people?: any[];
+    locations?: any[];
+    vehicles?: any[];
 }

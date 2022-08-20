@@ -15,55 +15,92 @@ export const FILM_API: FilmApi = {
 	'running_time': '124',
 	'rt_score': '95',
 	'people': [
-		'https://ghibliapi.herokuapp.com/people/598f7048-74ff-41e0-92ef-87dc1ad980a9',
-		'https://ghibliapi.herokuapp.com/people/fe93adf2-2f3a-4ec4-9f68-5422f1b87c01',
-		'https://ghibliapi.herokuapp.com/people/3bc0b41e-3569-4d20-ae73-2da329bf0786',
-		'https://ghibliapi.herokuapp.com/people/40c005ce-3725-4f15-8409-3e1b1b14b583',
-		'https://ghibliapi.herokuapp.com/people/5c83c12a-62d5-4e92-8672-33ac76ae1fa0',
-		'https://ghibliapi.herokuapp.com/people/e08880d0-6938-44f3-b179-81947e7873fc',
-		'https://ghibliapi.herokuapp.com/people/2a1dad70-802a-459d-8cc2-4ebd8821248b'
+		{
+			'id': '598f7048-74ff-41e0-92ef-87dc1ad980a9',
+			'name': 'Lusheeta Toel Ul Laputa'
+		},
+		{
+			'id': 'fe93adf2-2f3a-4ec4-9f68-5422f1b87c01',
+			'name': 'Pazu'
+		},
+		{
+			'id': '3bc0b41e-3569-4d20-ae73-2da329bf0786',
+			'name': 'Captain Dola'
+		},
+		{
+			'id': '40c005ce-3725-4f15-8409-3e1b1b14b583',
+			'name': 'Colonel Muska'
+		},
+		{
+			'id': '5c83c12a-62d5-4e92-8672-33ac76ae1fa0',
+			'name': 'General Mouro'
+		},
+		{
+			'id': 'e08880d0-6938-44f3-b179-81947e7873fc',
+			'name': 'Uncle Pom'
+		},
+		{
+			'id': '2a1dad70-802a-459d-8cc2-4ebd8821248b',
+			'name': 'Laputian Robot'
+		}
 	],
 	'species': [
 		'https://ghibliapi.herokuapp.com/species/af3910a6-429f-4c74-9ad5-dfe1c4aa04f2'
 	],
-	'locations': [
-		'https://ghibliapi.herokuapp.com/locations/'
-	],
+	'locations': [],
 	'vehicles': [
-		'https://ghibliapi.herokuapp.com/vehicles/4e09b023-f650-4747-9ab9-eacf14540cfb'
+		{
+			'id': '4e09b023-f650-4747-9ab9-eacf14540cfb',
+			'name': 'Air Destroyer Goliath'
+		}
 	],
 	'url': 'https://ghibliapi.herokuapp.com/films/2baf70d1-42bb-4437-b551-e5fed5a87abe'
 };
 
 export const EXPECTED_FILM: Film = {
-	'id': '2baf70d1-42bb-4437-b551-e5fed5a87abe',
-	'title': 'Castle in the Sky',
-	'originalTitle': '天空の城ラピュタ',
-	'originalTitleRomanized': 'Tenkū no shiro Rapyuta',
-	'image': 'https://image.tmdb.org/t/p/w600_and_h900_bestv2/npOnzAbLh6VOIu3naU5QaEcTepo.jpg',
-	'movieBanner': 'https://image.tmdb.org/t/p/w533_and_h300_bestv2/3cyjYtLWCBE1uvWINHFsFnE8LUK.jpg',
-	'description': 'The orphan Sheeta inherited a mysterious crystal that links her to the mythical sky-kingdom of Laputa. With the help of resourceful Pazu and a rollicking band of sky pirates, she makes her way to the ruins of the once-great civilization. Sheeta and Pazu must outwit the evil Muska, who plans to use Laputa\'s science to make himself ruler of the world.',
-	'director': 'Hayao Miyazaki',
-	'producer': 'Isao Takahata',
-	'releaseDate': '1986',
-	'runningTime': '124',
-	'score': '95',
-	'people': [
-		'https://ghibliapi.herokuapp.com/people/598f7048-74ff-41e0-92ef-87dc1ad980a9',
-		'https://ghibliapi.herokuapp.com/people/fe93adf2-2f3a-4ec4-9f68-5422f1b87c01',
-		'https://ghibliapi.herokuapp.com/people/3bc0b41e-3569-4d20-ae73-2da329bf0786',
-		'https://ghibliapi.herokuapp.com/people/40c005ce-3725-4f15-8409-3e1b1b14b583',
-		'https://ghibliapi.herokuapp.com/people/5c83c12a-62d5-4e92-8672-33ac76ae1fa0',
-		'https://ghibliapi.herokuapp.com/people/e08880d0-6938-44f3-b179-81947e7873fc',
-		'https://ghibliapi.herokuapp.com/people/2a1dad70-802a-459d-8cc2-4ebd8821248b'
+	id: '2baf70d1-42bb-4437-b551-e5fed5a87abe',
+	title: 'Castle in the Sky',
+	originalTitle: '天空の城ラピュタ',
+	originalTitleRomanized: 'Tenkū no shiro Rapyuta',
+	image: 'https://image.tmdb.org/t/p/w600_and_h900_bestv2/npOnzAbLh6VOIu3naU5QaEcTepo.jpg',
+	movieBanner: 'https://image.tmdb.org/t/p/w533_and_h300_bestv2/3cyjYtLWCBE1uvWINHFsFnE8LUK.jpg',
+	description: 'The orphan Sheeta inherited a mysterious crystal that links her to the mythical sky-kingdom of Laputa. With the help of resourceful Pazu and a rollicking band of sky pirates, she makes her way to the ruins of the once-great civilization. Sheeta and Pazu must outwit the evil Muska, who plans to use Laputa\'s science to make himself ruler of the world.',
+	director: 'Hayao Miyazaki',
+	producer: 'Isao Takahata',
+	releaseDate: '1986',
+	runningTime: '124',
+	score: '95',
+	people: [
+		{
+			id: '598f7048-74ff-41e0-92ef-87dc1ad980a9',
+			name: 'Lusheeta Toel Ul Laputa'
+		},
+		{ id: 'fe93adf2-2f3a-4ec4-9f68-5422f1b87c01', name: 'Pazu' },
+		{
+			id: '3bc0b41e-3569-4d20-ae73-2da329bf0786',
+			name: 'Captain Dola'
+		},
+		{
+			id: '40c005ce-3725-4f15-8409-3e1b1b14b583',
+			name: 'Colonel Muska'
+		},
+		{
+			id: '5c83c12a-62d5-4e92-8672-33ac76ae1fa0',
+			name: 'General Mouro'
+		},
+		{ id: 'e08880d0-6938-44f3-b179-81947e7873fc', name: 'Uncle Pom' },
+		{
+			id: '2a1dad70-802a-459d-8cc2-4ebd8821248b',
+			name: 'Laputian Robot'
+		}
 	],
-	'species': [
-		'https://ghibliapi.herokuapp.com/species/af3910a6-429f-4c74-9ad5-dfe1c4aa04f2'
-	],
-	'locations': undefined,
-	'vehicles': [
-		'https://ghibliapi.herokuapp.com/vehicles/4e09b023-f650-4747-9ab9-eacf14540cfb'
-	],
+	locations: [],
+	vehicles: [
+		{
+			id: '4e09b023-f650-4747-9ab9-eacf14540cfb',
+			name: 'Air Destroyer Goliath'
+		}
+	]
 };
 
 export const FILM_LIST_API: FilmApi[] = [
@@ -181,22 +218,6 @@ export const EXPECTED_FILM_LIST: Film[] = [
 		'releaseDate': '1986',
 		'runningTime': '124',
 		'score': '95',
-		'people': [
-			'https://ghibliapi.herokuapp.com/people/598f7048-74ff-41e0-92ef-87dc1ad980a9',
-			'https://ghibliapi.herokuapp.com/people/fe93adf2-2f3a-4ec4-9f68-5422f1b87c01',
-			'https://ghibliapi.herokuapp.com/people/3bc0b41e-3569-4d20-ae73-2da329bf0786',
-			'https://ghibliapi.herokuapp.com/people/40c005ce-3725-4f15-8409-3e1b1b14b583',
-			'https://ghibliapi.herokuapp.com/people/5c83c12a-62d5-4e92-8672-33ac76ae1fa0',
-			'https://ghibliapi.herokuapp.com/people/e08880d0-6938-44f3-b179-81947e7873fc',
-			'https://ghibliapi.herokuapp.com/people/2a1dad70-802a-459d-8cc2-4ebd8821248b'
-		],
-		'species': [
-			'https://ghibliapi.herokuapp.com/species/af3910a6-429f-4c74-9ad5-dfe1c4aa04f2'
-		],
-		'locations': undefined,
-		'vehicles': [
-			'https://ghibliapi.herokuapp.com/vehicles/4e09b023-f650-4747-9ab9-eacf14540cfb'
-		],
 	},
 	{
 		'id': '12cfb892-aac0-4c5b-94af-521852e46d6a',
@@ -211,12 +232,6 @@ export const EXPECTED_FILM_LIST: Film[] = [
 		'releaseDate': '1988',
 		'runningTime': '89',
 		'score': '97',
-		'people': undefined,
-		'species': [
-			'https://ghibliapi.herokuapp.com/species/af3910a6-429f-4c74-9ad5-dfe1c4aa04f2'
-		],
-		'locations': undefined,
-		'vehicles': undefined,
 	},
 	{
 		'id': '58611129-2dbc-4a81-a72f-77ddfc1b1b49',
@@ -230,25 +245,6 @@ export const EXPECTED_FILM_LIST: Film[] = [
 		'producer': 'Hayao Miyazaki',
 		'releaseDate': '1988',
 		'runningTime': '86',
-		'score': '93',
-		'people': [
-			'https://ghibliapi.herokuapp.com/people/986faac6-67e3-4fb8-a9ee-bad077c2e7fe',
-			'https://ghibliapi.herokuapp.com/people/d5df3c04-f355-4038-833c-83bd3502b6b9',
-			'https://ghibliapi.herokuapp.com/people/3031caa8-eb1a-41c6-ab93-dd091b541e11',
-			'https://ghibliapi.herokuapp.com/people/87b68b97-3774-495b-bf80-495a5f3e672d',
-			'https://ghibliapi.herokuapp.com/people/d39deecb-2bd0-4770-8b45-485f26e1381f',
-			'https://ghibliapi.herokuapp.com/people/591524bc-04fe-4e60-8d61-2425e42ffb2a',
-			'https://ghibliapi.herokuapp.com/people/c491755a-407d-4d6e-b58a-240ec78b5061',
-			'https://ghibliapi.herokuapp.com/people/f467e18e-3694-409f-bdb3-be891ade1106',
-			'https://ghibliapi.herokuapp.com/people/08ffbce4-7f94-476a-95bc-76d3c3969c19',
-			'https://ghibliapi.herokuapp.com/people/0f8ef701-b4c7-4f15-bd15-368c7fe38d0a'
-		],
-		'species': [
-			'https://ghibliapi.herokuapp.com/species/af3910a6-429f-4c74-9ad5-dfe1c4aa04f2',
-			'https://ghibliapi.herokuapp.com/species/603428ba-8a86-4b0b-a9f1-65df6abef3d3',
-			'https://ghibliapi.herokuapp.com/species/74b7f547-1577-4430-806c-c358c8b6bcf5'
-		],
-		'locations': undefined,
-		'vehicles': undefined,
+		'score': '93'
 	},
 ];

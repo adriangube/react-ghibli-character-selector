@@ -14,6 +14,5 @@ export const FILM_MOCK: Film = {
 	'runningTime': '124',
 	'score': '95',
 	'people': undefined,
-	'species': undefined,
 	'vehicles': undefined
 };

@@ -1,3 +1,5 @@
+import {EntityApi} from '../entityApi';
+
 export interface FilmApi {
     id: string;
     title: string;
@@ -11,9 +13,9 @@ export interface FilmApi {
     release_date: string;
     running_time: string;
     rt_score: string;
-    people: string[];
-    species: string[];
-    locations: string[];
-    vehicles: string[];
+    people?: string[] | EntityApi[];
+    species?: string[] | string[];
+    locations?: string[] | EntityApi[];
+    vehicles?: string[] | EntityApi[];
     url: string;
 }
