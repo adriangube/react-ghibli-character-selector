@@ -1,0 +1,32 @@
+.FilmListSkeleton {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 64px;
+    row-gap: 32px;
+    justify-content: center;
+    width: calc(100vw - 128px);
+    max-width: 1200px;
+}
+
+.FilmListSkeleton .FilmListSkeleton__item {
+    aspect-ratio: 16 / 9;
+}
+
+@media only screen and (max-width: 1200px) {
+    .FilmListSkeleton {
+        column-gap: 32px;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .FilmListSkeleton {
+        grid-template-columns: repeat(2, 1fr);
+        width: calc(100vw - 64px);
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .FilmListSkeleton {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}

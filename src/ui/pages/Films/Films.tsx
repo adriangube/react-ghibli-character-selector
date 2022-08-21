@@ -1,13 +1,17 @@
 import React, {useEffect, useState} from 'react';
 import {getFilmListUseCase} from '../../../application/film/getFilmListUseCase';
 import {Film} from '../../../domain/film/film';
+import {Fetching} from '../../components/Fetching/Fetching';
 import {FilmItem} from '../../components/FilmItem/FilmItem';
+import {FilmListSkeleton} from '../../components/FilmListSkeleton/FilmListSkeleton';
+import {NoData} from '../../components/NoData/NoData';
 import './Films.css';
 
 export const Films = (): JSX.Element => {
 	const [isFetching, setIsFetching] = useState(true);
 	const [films, setFilms] = useState<Film[]>([]);
 	const hasFilms = films?.length > 0;
+	
 	useEffect(() => {
 		setIsFetching(true);
 		getFilmListUseCase()
@@ -34,12 +38,10 @@ export const Films = (): JSX.Element => {
 						))}
 					</div>
 				)}
-				{!isFetching && !hasFilms && (
-					<div className='Films__no-data'>No data</div>
-				)}
-				{isFetching && (
-					<div className='Film__is-fetching'>Fetching</div>
-				)}
+				<NoData isVisible={!isFetching && !hasFilms} />
+				<Fetching isVisible={isFetching}>
+					<FilmListSkeleton />
+				</Fetching>
 			</div>
 		</div>
 	);

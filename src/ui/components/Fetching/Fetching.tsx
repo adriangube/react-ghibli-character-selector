@@ -1,14 +1,17 @@
 import React from 'react';
 
 export type FetchingProps = {
-    isVisible: boolean;
+	isVisible: boolean;
+	children?: JSX.Element
 }
 
-export const Fetching = ({isVisible}:FetchingProps ): JSX.Element => {
+export const Fetching = ({isVisible, children}:FetchingProps ): JSX.Element => {
 	return (
 		<>
 			{isVisible && (
-				<div className='Fetching'>Fetching</div>
+				<div className='Fetching'>
+					{children}
+				</div>
 			)}
 		</>
 	);
