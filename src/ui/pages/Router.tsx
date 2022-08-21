@@ -3,6 +3,7 @@ import {
 	BrowserRouter,
 	Routes,
 	Route,
+	Navigate,
 } from 'react-router-dom';
 import {DetailPageSkeleton} from '../components/DetailPageSkeleton/DetailPageSkeleton';
 import {FilmListSkeleton} from '../components/FilmListSkeleton/FilmListSkeleton';
@@ -54,6 +55,7 @@ export const Router = () => {
 						<Films/>
 					</React.Suspense>
 				)} />
+				<Route path="*" element={<Navigate to="/films" replace />} />
 			</Routes>
 		</BrowserRouter>
 	);
