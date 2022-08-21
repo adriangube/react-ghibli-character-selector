@@ -9,6 +9,8 @@ import {NoData} from '../../components/NoData/NoData';
 import {VehicleGeneralInfo} from '../../components/VehicleGeneralInfo/VehicleGeneralInfo';
 import {useFetch} from '../../hooks/useFetch';
 import '../../theme/detail-pages.css';
+import { DetailPageSkeleton } from '../../components/DetailPageSkeleton/DetailPageSkeleton';
+
 
 export const VehicleDetail = (): JSX.Element => {
 	const {id} = useParams();
@@ -31,7 +33,9 @@ export const VehicleDetail = (): JSX.Element => {
 				</div>
 			)}
 			<NoData isVisible={!isFetching && !vehicle} />
-			<Fetching isVisible={isFetching} />
+			<Fetching isVisible={isFetching}>
+				<DetailPageSkeleton />
+			</Fetching>
 		</div>
 	);
 };

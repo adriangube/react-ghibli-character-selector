@@ -9,6 +9,7 @@ import {NoData} from '../../components/NoData/NoData';
 import {SpecieGeneralInfo} from '../../components/SpecieGeneralInfo/SpecieGeneralInfo';
 import {useFetch} from '../../hooks/useFetch';
 import '../../theme/detail-pages.css';
+import { DetailPageSkeleton } from '../../components/DetailPageSkeleton/DetailPageSkeleton';
 
 export const SpecieDetail = (): JSX.Element => {
 	const {id} = useParams();
@@ -35,7 +36,9 @@ export const SpecieDetail = (): JSX.Element => {
 				</div>
 			)}
 			<NoData isVisible={!isFetching && !specie} />
-			<Fetching isVisible={isFetching} />
+			<Fetching isVisible={isFetching}>
+				<DetailPageSkeleton />
+			</Fetching>	
 		</div>
 	);
 };

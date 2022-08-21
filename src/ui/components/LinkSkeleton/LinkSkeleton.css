@@ -1,0 +1,17 @@
+.LinkSkeleton {
+    display: flex;
+    align-items: center;
+    margin-bottom: 4px;
+}
+
+.LinkSkeleton .LinkSkeleton__decoration {
+    width: 8px;
+    height: 8px;
+    border-radius: 100%;
+    margin-right: 16px;
+}
+
+.LinkSkeleton .LinkSkeleton__text {
+    height: 16px;
+    width: 150px;
+}

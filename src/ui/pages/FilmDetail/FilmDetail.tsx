@@ -4,6 +4,7 @@ import {getFilmUseCase} from '../../../application/film/getFilmUseCase';
 import {Entity, hasEntities} from '../../../domain';
 import {Film} from '../../../domain/film/film';
 import {DetailPageHeader} from '../../components/DetailPageHeader/DetailPageHeader';
+import {DetailPageSkeleton} from '../../components/DetailPageSkeleton/DetailPageSkeleton';
 import {EntityList} from '../../components/EntityList/EntityList';
 import {Fetching} from '../../components/Fetching/Fetching';
 import {FilmDetailGeneralInfo} from '../../components/FilmDetailGeneralInfo/FilmDetailGeneralInfo';
@@ -45,7 +46,9 @@ export const FilmDetail = (): JSX.Element => {
 				</div>
 			)}
 			<NoData isVisible={!isFetching && !film} />
-			<Fetching isVisible={isFetching} />
+			<Fetching isVisible={isFetching}>
+				<DetailPageSkeleton />
+			</Fetching>
 		</div>
 	);
 };

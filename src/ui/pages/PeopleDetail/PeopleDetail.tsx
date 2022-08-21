@@ -8,6 +8,8 @@ import {Fetching} from '../../components/Fetching/Fetching';
 import {NoData} from '../../components/NoData/NoData';
 import {PeopleGeneralInfo} from '../../components/PeopleGeneralInfo/PeopleGeneralInfo';
 import {useFetch} from '../../hooks/useFetch';
+import { DetailPageSkeleton } from '../../components/DetailPageSkeleton/DetailPageSkeleton';
+
 import '../../theme/detail-pages.css';
 
 export const PeopleDetail = (): JSX.Element => {
@@ -31,7 +33,9 @@ export const PeopleDetail = (): JSX.Element => {
 				</div>
 			)}
 			<NoData isVisible={!isFetching && !people} />
-			<Fetching isVisible={isFetching} />
+			<Fetching isVisible={isFetching}>
+				<DetailPageSkeleton />
+			</Fetching>		
 		</div>
 	);
 };

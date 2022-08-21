@@ -1,0 +1,16 @@
+.TextSkeleton .TextSkeleton__line {
+    height: 16px;
+    margin-bottom: 4px;
+}
+
+.TextSkeleton .TextSkeleton__line.TextSkeleton__line--large {
+    width: 100%;
+}
+
+.TextSkeleton .TextSkeleton__line.TextSkeleton__line--medium {
+    width: 50%;
+}
+
+.TextSkeleton .TextSkeleton__line.TextSkeleton__line--small {
+    width: 30%;
+}
