@@ -7,7 +7,7 @@ import {adaptFilmsCategory, categoryUrlsWithoutDefault, fetchAllCategories, FILM
 
 export type PeopleRepository = (id: string, adapter: PeopleAdapter, httpClient: HttpClientDef) => Promise<People>;
 
-export const PeopleRepository = async (id: string, adapter: PeopleAdapter, httpClient: HttpClientDef): Promise<People> => {
+export const peopleRepository = async (id: string, adapter: PeopleAdapter, httpClient: HttpClientDef): Promise<People> => {
 	const url = `${process.env.REACT_APP_BASE_API_URL}/people/${id}`;
 	const apiData = await httpClient.get({url});
     
