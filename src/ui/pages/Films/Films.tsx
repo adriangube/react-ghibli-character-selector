@@ -28,6 +28,7 @@ export const Films = (): JSX.Element => {
 			});
 	}, []);
 
+
 	return (
 		<div className='Films'>
 			<div className="Films__content">
