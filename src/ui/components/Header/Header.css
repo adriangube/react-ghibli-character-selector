@@ -1,10 +1,51 @@
 @import '../../theme/theme.css';
 
 .Header {
-    height: 56px;
+    display: flex;
+    align-items: center;
+    height: 65px;
     background-color: var(--background-color);
     box-shadow: 0 -6px 10px 5px rgba(0,0,0,0.5);
     position: sticky;
     top: 0;
     z-index: 2;
+    color: rgba(255, 255, 255, 0.8);
+    padding: 0px 32px;
+}
+
+.Header .Header__logo {
+    height: 100%;
+    width: 80px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.Header .Header__title {
+    font-size: 18px;
+    font-weight: 500;
+    flex: 1;
+}
+
+.Header .Header__github-avatar {
+    overflow: hidden;
+    border-radius: 100%;
+    cursor: pointer;
+    height: 32px;
+    opacity: 0.8;
+}
+
+.Header .Header__github-avatar:hover {
+    opacity: 1;
+}
+
+@media only screen and (max-width: 500px){
+
+    .Header {
+        justify-content: space-between;
+    }
+
+    .Header .Header__title {
+        display: none;
+    }
 }
