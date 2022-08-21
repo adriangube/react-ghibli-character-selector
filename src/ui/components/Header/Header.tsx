@@ -8,7 +8,7 @@ export const Header = (): JSX.Element => {
 	};
 
 	const onClickGithubLogoHandler = () => {
-		window.open('https://github.com/adriangube/react-ghibli-character-selector');
+		window.open('https://github.com/adriangube/react-ghibli-films-selector');
 	};
 	return (
 		<nav className="Header">
