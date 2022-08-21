@@ -3,12 +3,13 @@ import {useParams} from 'react-router-dom';
 import {getFilmUseCase} from '../../../application/film/getFilmUseCase';
 import {Entity} from '../../../domain';
 import {Film} from '../../../domain/film/film';
-import {Banner} from '../../components/Banner/Banner';
+import {DetailPageHeader} from '../../components/DetailPageHeader/DetailPageHeader';
 import {EntityList} from '../../components/EntityList/EntityList';
+import {Fetching} from '../../components/Fetching/Fetching';
 import {FilmDetailGeneralInfo} from '../../components/FilmDetailGeneralInfo/FilmDetailGeneralInfo';
-import {Title} from '../../components/Title/Title';
+import {NoData} from '../../components/NoData/NoData';
 import {useFetch} from '../../hooks/useFetch';
-import './FilmDetail.css';
+import '../../theme/detail-pages.css';
 
 export const FilmDetail = (): JSX.Element => {
 	const {id} = useParams();
@@ -20,16 +21,13 @@ export const FilmDetail = (): JSX.Element => {
 	const hasLocations = film?.locations && film?.locations?.length > 0;
 
 	return (
-		<div className="FilmDetail">
+		<div className="FilmDetail detail-page">
 			{!isFetching && film && (
-				<div className='FilmDetail__film'>
-					<div className="FilmDetail__film__header">
-						<Banner imageUrl={film.movieBanner} />
-						<Title title={film.title} />
-					</div>
-					<div className="FilmDetail__film__content">
+				<div className='detail-page__wrapper'>
+					<DetailPageHeader imageUrl={film.movieBanner} title={film.title} />
+					<div className="detail-page__content">
 						<FilmDetailGeneralInfo film={film} />
-						<div className="FilmDetail__film__content__additional">
+						<div className="detail-page__additional-content">
 							{hasPeople && (
 								<EntityList entityList={film.people as Entity[]} category="people"/>
 							)}
@@ -46,14 +44,8 @@ export const FilmDetail = (): JSX.Element => {
 					</div>
 				</div>
 			)}
-			{!isFetching && !film && (
-				<div className="FilmDetail__no-data">
-					No data
-				</div>
-			)}
-			{isFetching && (
-				<div className='FilmDetail__fetching'>Fetching</div>
-			)}
+			<NoData isVisible={!isFetching && !film} />
+			<Fetching isVisible={isFetching} />
 		</div>
 	);
 };

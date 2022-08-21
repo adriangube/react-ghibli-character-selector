@@ -21,7 +21,7 @@ export const fetchAllCategories = async (categoriesArray: Array<string[]>, httpC
 	categoriesArray.forEach((category: string[]) => {
 		const promises: Promise<ApiResponse<EntityApi[]>[]>[] = [];
 		category?.forEach((url: string) => {
-			promises.push(httpClient.get({url: `${url}?fields=id,name`}));
+			promises.push(httpClient.get({url: `${url}?fields=id,name,title`}));
 		});
 		result.push(Promise.all(promises));
 	});
@@ -30,8 +30,6 @@ export const fetchAllCategories = async (categoriesArray: Array<string[]>, httpC
 	return resolvedCategories;
 };
 
-export const adaptFilmsCategory = (films: Array<{id: string, title: string;}>): EntityApi[] => {
-	return films.map((film) => {
-		return {id: film.id, name: film.title};
-	});
+export const adaptFilmsCategory = (film: {id: string, title: string;}): EntityApi => {
+	return {id: film.id, name: film.title};
 };

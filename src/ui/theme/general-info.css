@@ -1,0 +1,25 @@
+@import './theme.css';
+
+.general-info h2 {
+    border-left: 4px solid var(--title-background-color-light);
+    padding-left: 4px;
+    line-height: 25px;
+}
+
+.general-info p{
+    margin: 0px;
+    line-height: 24px;
+    padding-left: 24px;
+}
+
+.general-info section {
+    padding-bottom: 24px;
+}
+
+.general-info .label {
+    font-weight: 600;
+}
+
+.general-info .large-font-size {
+    font-size: 18px;
+}
