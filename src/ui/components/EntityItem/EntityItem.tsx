@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {startTransition} from 'react';
 import {useNavigate} from 'react-router-dom';
 import {Entity} from '../../../domain';
 import './EntityItem.css';
@@ -12,7 +12,9 @@ export const EntityItem = ({entity, category}: EntityItemProps): JSX.Element => 
 	const navigate = useNavigate();
     
 	const onClickHandler = () => {
-		navigate(`/${category}/${entity.id}`);
+		startTransition(() => {
+			navigate(`/${category}/${entity.id}`);
+		});
 	};
 
 	return (

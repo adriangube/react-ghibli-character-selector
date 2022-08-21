@@ -39,3 +39,5 @@ export const PeopleDetail = (): JSX.Element => {
 		</div>
 	);
 };
+
+export default PeopleDetail;

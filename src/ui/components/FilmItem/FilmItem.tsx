@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {startTransition} from 'react';
 import {useNavigate} from 'react-router-dom';
 import {Film} from '../../../domain/film/film';
 import './FilmItem.css';
@@ -10,7 +10,9 @@ export type FilmItemProps = {
 export const FilmItem = ({film}: FilmItemProps): JSX.Element => {
 	const navigate = useNavigate();
 	const onClickHandler = () => {
-		navigate(`/films/${film.id}`);
+		startTransition(() => {
+			navigate(`/films/${film.id}`);
+		});
 	};
 
 	return (

@@ -42,3 +42,5 @@ export const SpecieDetail = (): JSX.Element => {
 		</div>
 	);
 };
+
+export default SpecieDetail;

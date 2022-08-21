@@ -47,3 +47,5 @@ export const Films = (): JSX.Element => {
 		</div>
 	);
 };
+
+export default Films;

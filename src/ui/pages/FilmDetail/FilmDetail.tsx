@@ -52,3 +52,5 @@ export const FilmDetail = (): JSX.Element => {
 		</div>
 	);
 };
+
+export default FilmDetail;

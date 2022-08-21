@@ -39,3 +39,5 @@ export const VehicleDetail = (): JSX.Element => {
 		</div>
 	);
 };
+
+export default VehicleDetail;

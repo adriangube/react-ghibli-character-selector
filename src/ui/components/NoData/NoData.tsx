@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {startTransition} from 'react';
 import {useNavigate} from 'react-router-dom';
 import logo from '../../../assets/no-content.png';
 import './NoData.css';
@@ -10,7 +10,9 @@ export type NoDataProps = {
 export const NoData = ({isVisible}:NoDataProps ): JSX.Element => {
 	const navigate = useNavigate();
 	const clickHandler = () => {
-		navigate('/films');
+		startTransition(() => {
+			navigate('/films');
+		});
 	};
 
 	return (

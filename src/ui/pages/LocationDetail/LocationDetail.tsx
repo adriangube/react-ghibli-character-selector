@@ -41,3 +41,5 @@ export const LocationDetail = (): JSX.Element => {
 		</div>
 	);
 };
+
+export default LocationDetail;

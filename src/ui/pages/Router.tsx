@@ -4,26 +4,56 @@ import {
 	Routes,
 	Route,
 } from 'react-router-dom';
-import {FilmDetail} from './FilmDetail/FilmDetail';
-import {Films} from './Films/Films';
-import {LocationDetail} from './LocationDetail/LocationDetail';
-import {PeopleDetail} from './PeopleDetail/PeopleDetail';
-import {SpecieDetail} from './SpecieDetail/SpecieDetail';
-import {VehicleDetail} from './VehicleDetail/VehicleDetail';
+import {DetailPageSkeleton} from '../components/DetailPageSkeleton/DetailPageSkeleton';
+import {FilmListSkeleton} from '../components/FilmListSkeleton/FilmListSkeleton';
 
+const FilmDetail = React.lazy(() => import('./FilmDetail/FilmDetail'));
+const Films = React.lazy(() => import('./Films/Films'));
+const LocationDetail = React.lazy(() => import('./LocationDetail/LocationDetail'));
+const PeopleDetail = React.lazy(() => import('./PeopleDetail/PeopleDetail'));
+const SpecieDetail = React.lazy(() => import('./SpecieDetail/SpecieDetail'));
+const VehicleDetail = React.lazy(() => import('./VehicleDetail/VehicleDetail'));
 
 export const Router = () => {
 	return (
 		<BrowserRouter>
 			<Routes>
-				<Route path="films/:id" element={<FilmDetail/>} />
-				<Route path="films" element={<Films />} />
-				<Route path="locations/:id" element={<LocationDetail />} />
-				<Route path="people/:id" element={<PeopleDetail />} />
-				<Route path="species/:id" element={<SpecieDetail />} />
-				<Route path="vehicles/:id" element={<VehicleDetail/>}/>
+				<Route path="films/:id" element={(
+					<React.Suspense fallback={<DetailPageSkeleton/>}>
+						<FilmDetail/>
+					</React.Suspense>
+				)} />
+				<Route path="films" element={(
+					<React.Suspense fallback={<FilmListSkeleton/>}>
+						<Films />
+					</React.Suspense>
+				)} />
+				<Route path="locations/:id" element={(
+					<React.Suspense fallback={<DetailPageSkeleton/>}>
+						<LocationDetail />
+					</React.Suspense>
+				)} />
+				<Route path="people/:id" element={(
+					<React.Suspense fallback={<DetailPageSkeleton/>}>
+						<PeopleDetail />
+					</React.Suspense>
+				)} />
+				<Route path="species/:id" element={(
+					<React.Suspense fallback={<DetailPageSkeleton/>}>
+						<SpecieDetail />
+					</React.Suspense>
+				)} />
+				<Route path="vehicles/:id" element={(
+					<React.Suspense fallback={<DetailPageSkeleton/>}>
+						<VehicleDetail/>
+					</React.Suspense>
+				)}/>
 				<Route />
-				<Route path="/" element={<Films/>} />
+				<Route path="/" element={(
+					<React.Suspense fallback={<FilmListSkeleton/>}>
+						<Films/>
+					</React.Suspense>
+				)} />
 			</Routes>
 		</BrowserRouter>
 	);
