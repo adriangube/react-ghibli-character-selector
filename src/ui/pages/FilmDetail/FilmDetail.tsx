@@ -1,7 +1,7 @@
 import React from 'react';
 import {useParams} from 'react-router-dom';
 import {getFilmUseCase} from '../../../application/film/getFilmUseCase';
-import {Entity} from '../../../domain';
+import {Entity, hasEntities} from '../../../domain';
 import {Film} from '../../../domain/film/film';
 import {DetailPageHeader} from '../../components/DetailPageHeader/DetailPageHeader';
 import {EntityList} from '../../components/EntityList/EntityList';
@@ -15,10 +15,10 @@ export const FilmDetail = (): JSX.Element => {
 	const {id} = useParams();
 	const {isFetching, data: film} = useFetch<Film>(getFilmUseCase, [id]);
 
-	const hasPeople = film?.people && film?.people?.length > 0;
-	const hasSpecies = film?.species && film?.species?.length > 0;
-	const hasVehicles = film?.vehicles && film?.vehicles?.length > 0;
-	const hasLocations = film?.locations && film?.locations?.length > 0;
+	const hasPeople = hasEntities(film?.people);
+	const hasSpecies = hasEntities(film?.species);
+	const hasVehicles = hasEntities(film?.vehicles);
+	const hasLocations = hasEntities(film?.locations);
 
 	return (
 		<div className="FilmDetail detail-page">

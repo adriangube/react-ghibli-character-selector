@@ -22,8 +22,6 @@ export const peopleRepository = async (id: string, adapter: PeopleAdapter, httpC
 		return {...adaptFilmsCategory(data?.data as any)};
 	});
     
-	apiData.data.species = resolvedCategories[1]?.map((data: ApiResponse<EntityApi[]>) => {
-		return data?.data[0];
-	});
+	apiData.data.species = resolvedCategories[1][0]?.data;
 	return adapter(apiData?.data);
 };

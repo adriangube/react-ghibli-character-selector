@@ -18,9 +18,7 @@ export const vehicleRepository: VehicleRepository = async (id: string, adapter: 
 
 	const resolvedCategories: any = await fetchAllCategories(categories, httpClient);
 
-	apiData.data.pilot = resolvedCategories[0]?.map((data: ApiResponse<EntityApi[]>) => {
-		return data?.data[0];
-	});
+	apiData.data.pilot = resolvedCategories[0][0]?.data;
 	apiData.data.films = resolvedCategories[1]?.map((data: ApiResponse<EntityApi[]>) => {
 		return {...adaptFilmsCategory(data?.data as any)};
 	});

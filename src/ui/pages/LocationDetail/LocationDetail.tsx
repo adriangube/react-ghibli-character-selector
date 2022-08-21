@@ -1,7 +1,7 @@
 import React from 'react';
 import {useParams} from 'react-router-dom';
 import {getLocationUseCase} from '../../../application/location/getLocationUseCase';
-import {Entity, Location} from '../../../domain';
+import {Entity, hasEntities, Location} from '../../../domain';
 import {DetailPageHeader} from '../../components/DetailPageHeader/DetailPageHeader';
 import {EntityList} from '../../components/EntityList/EntityList';
 import {Fetching} from '../../components/Fetching/Fetching';
@@ -14,8 +14,8 @@ export const LocationDetail = (): JSX.Element => {
 
 	const {id} = useParams();
 	const {isFetching, data: location} = useFetch<Location>(getLocationUseCase, [id]);
-	const hasResidents = location?.residents && location?.residents?.length > 0;
-	const hasFilms = location?.films && location?.films?.length > 0;
+	const hasResidents = hasEntities(location?.residents);
+	const hasFilms = hasEntities(location?.films);
 
 
 	return (
