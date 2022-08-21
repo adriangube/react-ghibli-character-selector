@@ -1,0 +1,1 @@
+export type UseCase<T> = (...args: any[]) => Promise<T>;

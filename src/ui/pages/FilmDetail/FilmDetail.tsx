@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import {useParams} from 'react-router-dom';
 import {getFilmUseCase} from '../../../application/film/getFilmUseCase';
 import {Entity} from '../../../domain';
@@ -7,34 +7,17 @@ import {Banner} from '../../components/Banner/Banner';
 import {EntityList} from '../../components/EntityList/EntityList';
 import {FilmDetailGeneralInfo} from '../../components/FilmDetailGeneralInfo/FilmDetailGeneralInfo';
 import {Title} from '../../components/Title/Title';
+import {useFetch} from '../../hooks/useFetch';
 import './FilmDetail.css';
 
 export const FilmDetail = (): JSX.Element => {
-	const [isFetching, setIsFetching] = useState(true);
-	const [film, setFilm] = useState<Film>();
 	const {id} = useParams();
+	const {isFetching, data: film} = useFetch<Film>(getFilmUseCase, [id]);
+
 	const hasPeople = film?.people && film?.people?.length > 0;
 	const hasSpecies = film?.species && film?.species?.length > 0;
 	const hasVehicles = film?.vehicles && film?.vehicles?.length > 0;
 	const hasLocations = film?.locations && film?.locations?.length > 0;
-
-	useEffect(() => {
-		if (id) {
-			setIsFetching(true);
-			getFilmUseCase(id)
-				.then((film) => {
-					if (film) {
-						setFilm(film);
-					}
-				})
-				.catch((error) => {
-					console.error(error);
-				})
-				.finally(() => {
-					setIsFetching(false);
-				});
-		}
-	}, [id]);
 
 	return (
 		<div className="FilmDetail">
