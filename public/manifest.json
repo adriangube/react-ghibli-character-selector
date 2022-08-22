@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Ghibli Films",
+  "name": "Studios Ghibli Films Selector",
   "icons": [
     {
       "src": "favicon.ico",
