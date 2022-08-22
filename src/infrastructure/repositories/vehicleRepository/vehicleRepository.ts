@@ -3,7 +3,7 @@ import {VehicleAdapter} from '../../adapters';
 import {HttpClientDef} from '../../http-client/types';
 import {ApiResponse} from '../../types';
 import {EntityApi} from '../../types/api/entityApi';
-import {adaptFilmsCategory, categoryUrlsWithoutDefault, fetchAllCategories, FILMS_BASE_URL, PEOPLE_BASE_URL} from '../categories';
+import {adaptFilmsCategory, categoryUrlsWithoutDefault, fetchAllCategories, FILMS_BASE_URL} from '../categories';
 
 export type VehicleRepository = (id: string, adapter: VehicleAdapter, httpClient: HttpClientDef) => Promise<Vehicle>;
 
